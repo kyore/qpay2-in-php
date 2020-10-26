@@ -5,7 +5,7 @@ function getToken() {
 	$curl = curl_init();
 	$headers = array(
     	'Content-Type:application/json',
-    	'Authorization: Basic '. base64_encode("CCSL_MERCHANT:wXYqI8")
+    	'Authorization: Basic '. base64_encode("username:password")
 	);
 	curl_setopt_array($curl, array(
 		CURLOPT_URL => "https://merchant-sandbox.qpay.mn/v2/auth/token",
@@ -29,7 +29,7 @@ $access_token = $token["access_token"];
 
 $curl = curl_init();
 $post_array = array(
-    "invoice_code"=> "CCSL_INVOICE",
+    	"invoice_code"=> "invoice_code",
 	"sender_invoice_no"=> "5646542",
 	"invoice_receiver_code"=> "terminal",
 	"invoice_description"=>"test",
